@@ -3,14 +3,14 @@ import { Typography, Grid } from '@material-ui/core';
 import CardComponent from './Card/Card';
 import styles from './Cards.module.css';
 
-const Info = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
+const Info = ({ data: { confirmed, deaths, lastUpdate } }) => {
   if (!confirmed) {
-    return 'Loading...';
+    return '';
   }
 
   return (
     <div className={styles.container}>
-        <Typography gutterBottom variant="h4" component="h2">Global</Typography>
+      <Typography gutterBottom variant="h4" component="h2">Global</Typography>
       <Grid container spacing={3} justify="center">
         <CardComponent
           className={styles.infected}
@@ -19,13 +19,7 @@ const Info = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           lastUpdate={lastUpdate}
           cardSubtitle="Number of active cases from COVID-19."
         />
-        <CardComponent
-          className={styles.recovered}
-          cardTitle="Recovered"
-          value={recovered.value}
-          lastUpdate={lastUpdate}
-          cardSubtitle="Number of recoveries from COVID-19."
-        />
+        <CardComponent />
         <CardComponent
           className={styles.deaths}
           cardTitle="Deaths"

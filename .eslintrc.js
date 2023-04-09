@@ -27,6 +27,8 @@ module.exports = {
       2,
       250
     ],
+    "eol-last": ["error", "never"],
+
     "no-multiple-empty-lines": [
       "error",
       {
